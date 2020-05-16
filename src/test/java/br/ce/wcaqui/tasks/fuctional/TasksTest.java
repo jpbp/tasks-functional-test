@@ -1,16 +1,22 @@
 package br.ce.wcaqui.tasks.fuctional;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
 
 public class TasksTest {
 	@Test
 	public void deveSalvarTarefaComSucesso() {
+		ChromeOptions cap = new ChromeOptions(); 
+		cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,UnexpectedAlertBehaviour.IGNORE);
 		WebDriver driver = new ChromeDriver();
 		//entrar no site
 		driver.navigate().to("http://localhost:8001/tasks/");
@@ -19,7 +25,7 @@ public class TasksTest {
 		
 		driver.findElement(By.id("addTodo")).click();
 		
-		//escrever descriçao
+		//escrever descriï¿½ao
 		driver.findElement(By.id("task")).sendKeys("Teste via selenuim");
 
 		
