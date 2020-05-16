@@ -19,9 +19,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class TasksTest {
 	@Test
 	public void deveSalvarTarefaComSucesso() throws MalformedURLException{
-		ChromeOptions cap = new ChromeOptions(); 
-		cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
-		                  UnexpectedAlertBehaviour.IGNORE);
+		DesiredCapabilities cap =  DesiredCapabilities.chrome();
 		
 		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"),cap);
 		 
