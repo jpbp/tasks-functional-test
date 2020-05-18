@@ -21,7 +21,7 @@ public class TasksTest {
 	public void deveSalvarTarefaComSucesso() throws MalformedURLException{
 		DesiredCapabilities cap =  DesiredCapabilities.chrome();
 		
-		WebDriver driver = new RemoteWebDriver(new URL("http://172.20.0.2:4444/wd/hub"),cap);
+		WebDriver driver = new RemoteWebDriver(new URL("http://169.254.219.119:4444/wd/hub"),cap);
 		 
 		//entrar no site
 		driver.navigate().to("http://192.168.0.101:8001/tasks/");
