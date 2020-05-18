@@ -20,9 +20,13 @@ public class TasksTest {
 	@Test
 	public void deveSalvarTarefaComSucesso() throws MalformedURLException{
 		DesiredCapabilities cap =  DesiredCapabilities.chrome();
-		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.102:4444/wd/hub"),cap);
+		// say you use the redhat5 label to indicate RHEL5 and the amd64 label to specify the architecture
+		cap.setCapability("jenkins.label","redhat5 && amd64");
+// Say you want a specific node to thread your request, just specify the node name (it must be running a selenium configuration though)
+		cap.setCapability("jenkins.nodeName","(master)");
+		WebDriver driver = new RemoteWebDriver(new URL("http://jenkins.192.168.0.102:4444/wd/hub"),cap);
 		//entrar no site
-		driver.navigate().to("http://localhost:8001/tasks/");
+		driver.navigate().to("http://192.168.0.102:8001/tasks/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//clicar em Add todo
 		
