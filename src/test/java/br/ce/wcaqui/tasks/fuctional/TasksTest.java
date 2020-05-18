@@ -19,11 +19,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class TasksTest {
 	
 	public WebDriver acessarAplicação()throws MalformedURLException  {
-		DesiredCapabilities cap =  DesiredCapabilities.chrome();
-		// say you use the redhat5 label to indicate RHEL5 and the amd64 label to specify the architecture
-		cap.setCapability("jenkins.label","redhat5 && amd64");
-		// Say you want a specific node to thread your request, just specify the node name (it must be running a selenium configuration though)
-		cap.setCapability("jenkins.nodeName","(master)");
+		
+	
+		ChromeOptions cap = new ChromeOptions();
+		cap.addArguments("disable-infobars");
+	
 		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.102:4444/wd/hub"),cap);
 		System.out.println("aqui");
 		return driver;
@@ -34,7 +34,7 @@ public class TasksTest {
 		WebDriver driver = acessarAplicação();
 		try {
 		//entrar no site
-		driver.navigate().to("http://192.168.0.102:8001/tasks/");
+		driver.navigate().to("http://169.254.219.119:8001/tasks/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//clicar em Add todo
 		
