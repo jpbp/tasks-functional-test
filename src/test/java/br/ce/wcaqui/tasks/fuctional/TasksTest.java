@@ -24,7 +24,7 @@ public class TasksTest {
 		WebDriver driver = new RemoteWebDriver(new URL("http://169.254.219.119:4444/wd/hub"),cap);
 		 
 		//entrar no site
-		driver.navigate().to("http://192.168.0.101:8001/tasks/");
+		driver.navigate().to("http://169.254.219.119:8001/tasks/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//clicar em Add todo
 		
