@@ -25,6 +25,7 @@ public class TasksTest {
 		// Say you want a specific node to thread your request, just specify the node name (it must be running a selenium configuration though)
 		cap.setCapability("jenkins.nodeName","(master)");
 		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.102:4444/wd/hub"),cap);
+		System.out.println("aqui");
 		return driver;
 	}
 	
