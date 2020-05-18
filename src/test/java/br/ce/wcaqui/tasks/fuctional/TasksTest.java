@@ -19,7 +19,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class TasksTest {
 	
 	public WebDriver acessarAplicação()throws MalformedURLException  {
-		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\joao_\\OneDrive\\Documentos\\chromedriver_win32");
 	
 		ChromeOptions cap = new ChromeOptions();
 		cap.addArguments("disable-infobars");
