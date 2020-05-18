@@ -22,7 +22,7 @@ public class TasksTest {
 		DesiredCapabilities cap =  DesiredCapabilities.chrome();
 		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.102:4444/wd/hub"),cap);
 		//entrar no site
-		driver.navigate().to("http://192.168.0.102:8001/tasks/");
+		driver.navigate().to("http://localhost:8001/tasks/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//clicar em Add todo
 		
